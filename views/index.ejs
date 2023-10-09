@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        me-ToDo
+    </header>
+    <div>
+        <section id="date-element" class="main">
+            <%= new Date().toDateString()%>
+        </section>
+        <section id="todo-list" class="main">
+            <% if (locals.task) { %>
+                <ul>
+                    <% task.forEach((t)=> { %>
+                        <!-- <li><%= t %></li> -->
+                        <li>
+                            <input type="checkbox" id="todo-" name="vehicle1" value="Bike">
+                            <label for="todo-"><span><%= t %></span></label><br>
+                        </li>
+                    <% }) %>
+                </ul>   
+            <% } %>
+        </section>
+        <section id="add-todo" class="main">
+            <form action="/submit" method="post">
+                <label for="task"> Add your ToDo</label>
+                <input type="text" name="task">
+                <input type="submit" id="submit-btn">
+            </form>  
+        </section>
+    </div>
+    
+</body>
+</html>
