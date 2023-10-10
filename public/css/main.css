@@ -19,6 +19,20 @@ header{
     display: flex;
     justify-content: space-between;   
 }
+.links{
+    text-decoration: none;
+    font-size: large;
+    font-weight: normal;
+    height:100%;
+    width:20vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.links a{
+    text-decoration: none;
+    color : black;
+}
 #main-element{
     margin-top: 5px;
     position: relative;

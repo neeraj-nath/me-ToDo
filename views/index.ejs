@@ -15,13 +15,13 @@
             me-ToDo
         </div>
         <div class="links">
-            <a href="">Personal</a>
-            <a href="">Work</a>
+            <a href="/">Personal</a>
+            <a href="/work">Work</a>
         </div> 
     </header>
     <div id="main-element">
         <section id="date-element" class="main">
-            <%= new Date().toDateString()%>
+            <%=listTitle%>
         </section>
         <section id="todo-list" class="main">
             <% if (locals.task) { %>
@@ -40,7 +40,7 @@
             <form method="post">
                 <label for="task"> Add your ToDo</label>
                 <input type="text" name="task" id="todo-field">
-                <input type="submit" id="submit-btn" value="Add" formaction="/submit">
+                <input type="submit" id="submit-btn" value="Add" formaction=<%= action %>>
             </form>  
         </section>
     </div>
