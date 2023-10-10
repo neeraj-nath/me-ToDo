@@ -2,8 +2,8 @@ import express from "express";
 import bodyParser from "body-parser" ;
 const app = express();
 const port = 3000;
-var listOfPersonalTasks = ["get a dog", "buy a car"];
-var listOfWorkTasks = ['Crack a better salary job'];
+var listOfPersonalTasks = [];
+var listOfWorkTasks = [];
 
 app.use(bodyParser.urlencoded({ extended: false }));
 // Static Middleware
@@ -45,7 +45,7 @@ app.post('/submit-work',(req,res) => {
     try{ 
         const task = req.body.task;
         listOfWorkTasks.push(task);
-        res.redirect('/');
+        res.redirect('/work');
     }catch(error){
         console.error(error.message);
         res.send('<h1>Some Error Occured!!</h1>');
