@@ -11,9 +11,15 @@
 </head>
 <body>
     <header>
-        me-ToDo
+        <div>
+            me-ToDo
+        </div>
+        <div class="links">
+            <a href="">Personal</a>
+            <a href="">Work</a>
+        </div> 
     </header>
-    <div>
+    <div id="main-element">
         <section id="date-element" class="main">
             <%= new Date().toDateString()%>
         </section>
@@ -31,10 +37,10 @@
             <% } %>
         </section>
         <section id="add-todo" class="main">
-            <form action="/submit" method="post">
+            <form method="post">
                 <label for="task"> Add your ToDo</label>
-                <input type="text" name="task">
-                <input type="submit" id="submit-btn">
+                <input type="text" name="task" id="todo-field">
+                <input type="submit" id="submit-btn" value="Add" formaction="/submit">
             </form>  
         </section>
     </div>
